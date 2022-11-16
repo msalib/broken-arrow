@@ -1,0 +1,16 @@
+[package]
+name = "broken-arrow"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.66"
+arrow = {version = "27.0.0", default-features = false}
+parquet = {version = "27.0.0", default-features = false, features = ["arrow", "snap", "zstd"]}
+structopt = "0.3.26"
+
+
+[profile.release]
+overflow-checks = true
